@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: metrics-addon
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: metrics-addon
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
