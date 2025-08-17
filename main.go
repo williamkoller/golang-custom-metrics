@@ -20,7 +20,7 @@ var (
 func recordMetrics() {
 	go func() {
 		for {
-			myCustomMetric.Set(rand.Float64() * 100) // valor aleatório
+			myCustomMetric.Set(rand.Float64() * 100)
 			time.Sleep(5 * time.Second)
 		}
 	}()
